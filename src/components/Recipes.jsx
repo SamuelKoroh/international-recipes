@@ -16,7 +16,7 @@ const Recipes = ({ getRecipes, loading, recipes }) => {
           <div key={recipe.recipe_id} className="col-md-3 col-sm-6 col-xs-12 mb-4">
             <div className="card">
               <Link to={`/recipe-details/${recipe.recipe_id}`}>
-                <div >
+                <div>
                   <img src={recipe.image_url} className="img-fluid img-thumbnail" style={{ maxHeight: '171.34px', width: '100%' }} alt="..." />
                 </div>
                 <div>
@@ -32,7 +32,7 @@ const Recipes = ({ getRecipes, loading, recipes }) => {
         ))}
       </div>
     </div>
-  )
+  );
 };
 
 Recipes.propTypes = {
