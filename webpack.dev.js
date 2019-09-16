@@ -7,7 +7,8 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: 'js/main.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
   },
   module: {
     rules: [

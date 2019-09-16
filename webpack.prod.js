@@ -2,7 +2,6 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
@@ -11,7 +10,8 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: 'js/main-[hash].js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -32,10 +32,9 @@ module.exports = merge(common, {
         removeComments: true,
         removeRedundantAttributes: true
       }
-    }),
-    new CompressionPlugin({
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/
     })
-  ]
+  ],
+  devServer: {
+    contentBase: './build'
+  }
 });
