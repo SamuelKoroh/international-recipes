@@ -33,8 +33,5 @@ module.exports = merge(common, {
         removeRedundantAttributes: true
       }
     })
-  ],
-  devServer: {
-    contentBase: './build'
-  }
+  ]
 });

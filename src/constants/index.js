@@ -1,4 +1,5 @@
 export const GET_RECIPES = 'GET_RECIPES';
 export const GET_RECIPES_FAIL = 'GET_RECIPES_FAIL';
 export const GET_RECIPE_BY_ID = 'GET_RECIPE_BY_ID';
+export const GET_RECIPE_BY_QUERY = 'GET_RECIPE_BY_QUERY';
 export const SORT_RECIPES = 'SORT_RECIPES';

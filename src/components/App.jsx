@@ -12,8 +12,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
+        <Route path="/" exact component={Landing} />
         <Switch>
-          <Route path="/" exact component={Landing} />
           <Route path="/recipes" exact component={Recipes} />
           <Route path="/recipe-details/:id" exact component={RecipeDetails} />
         </Switch>
