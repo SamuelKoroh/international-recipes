@@ -24,5 +24,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx']
+  },
+  devServer: {
+    contentBase: './build',
+    historyApiFallback: true
   }
 };
