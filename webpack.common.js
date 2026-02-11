@@ -14,11 +14,17 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|gif|png|svg)$/,
-        loader: 'file-loader?name=images/[name].[ext]'
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]'
+        }
       },
       {
         test: /\.(eot|woff|woff2|ttf)$/,
-        loader: 'file-loader?name=fonts/[name].[ext]'
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
+        }
       }
     ]
   },
@@ -26,7 +32,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   devServer: {
-    contentBase: './build',
+    static: './build',
     historyApiFallback: true
   }
 };
